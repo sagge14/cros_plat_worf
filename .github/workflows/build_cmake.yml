@@ -12,6 +12,7 @@ jobs:
   build:
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
+    permissions: write-all
     strategy:
       fail-fast: false
       matrix:
@@ -241,7 +242,7 @@ jobs:
   release:
     #if: contains(github.ref, 'tags/v')
     runs-on: ubuntu-latest
-  
+    permissions: write-all
     needs: build
     
 
@@ -267,9 +268,10 @@ jobs:
         name: upload_url
 
   publish:
-    if: contains(github.ref, 'tags/v')
+   # if: contains(github.ref, 'tags/v')
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
+    permissions: write-all
     strategy:
       fail-fast: false
       matrix:
