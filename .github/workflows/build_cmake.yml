@@ -242,6 +242,7 @@ jobs:
   #  if: contains(github.ref, 'tags/v')
     runs-on: ubuntu-latest
     needs: build
+    using: 'node16'
 
     steps:
     - name: Create Release
