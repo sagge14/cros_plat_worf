@@ -293,14 +293,12 @@ jobs:
 
     steps:
     - name: Download artifact
-    using: 'node16'
       uses: actions/download-artifact@v3
       with:
         name: ${{ matrix.config.artifact }}
         path: ./
 
     - name: Download URL
-    using: 'node16'
       uses: actions/download-artifact@v3
       with:
         name: upload_url
@@ -312,7 +310,6 @@ jobs:
 
     - name: Upload to Release
       id: upload_to_release
-      using: 'node16'
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
