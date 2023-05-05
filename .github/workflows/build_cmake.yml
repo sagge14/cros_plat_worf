@@ -241,11 +241,7 @@ jobs:
   release:
     #if: contains(github.ref, 'tags/v')
     runs-on: ubuntu-latest
-    
-     permissions:
-      issues: write
-      pull-requests: write
-      
+  
     needs: build
     
 
